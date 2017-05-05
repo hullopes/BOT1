@@ -5,17 +5,27 @@
  */
 package br.tatuapu.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
  * @author hullopes
  */
-public abstract class HtmlElement {
+public class HtmlElement {
     private final String nomeElement;
-    private List<String> atributos;
-    public HtmlElement(String nE){
+    private final String conteudo;
+    private List<Atributo> atributos;
+    public HtmlElement(String nE, String conteudo){
         this.nomeElement = nE;
+        this.conteudo = conteudo;
+        this.atributos = new ArrayList();
+    }
+    public void setAtributo(Atributo atributo){
+        this.atributos.add(atributo);
+    }
+    public void setAtributo(List<Atributo> atributos){
+        this.atributos = atributos;
     }
     
 }
